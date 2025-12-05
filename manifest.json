@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "TextSnap - 网页内容提取工具",
+  "version": "1.0.0",
+  "description": "一键提取当前网页的主要文字内容，并导出为UTF-8编码的TXT文件。",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TextSnap"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
